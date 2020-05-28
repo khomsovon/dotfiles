@@ -1,0 +1,86 @@
+{
+	"name": "vscode-seeing-is-believing",
+	"displayName": "Seeing is Believing Integration",
+	"description": "Integration for https://github.com/JoshCheek/seeing_is_believing",
+	"version": "0.1.1",
+	"publisher": "brandoncc",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/brandoncc/vscode-seeing-is-believing.git"
+	},
+	"engines": {
+		"vscode": "^1.11.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:seeing-is-believing.toggle-marks",
+		"onCommand:seeing-is-believing.run",
+		"onCommand:seeing-is-believing.clean"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "seeing-is-believing.toggle-marks",
+				"title": "Seeing is Believing: Mark/Unmark Line(s) for Annotation"
+			},
+			{
+				"command": "seeing-is-believing.run",
+				"title": "Seeing is Believing: Run"
+			},
+			{
+				"command": "seeing-is-believing.clean",
+				"title": "Seeing is Believing: Clean"
+			}
+		],
+		"configuration": {
+			"type": "object",
+			"title": "Seeing is believing configuration",
+			"properties": {
+				"seeing-is-believing.annotate-all-if-none-are-marked": {
+					"type": "boolean",
+					"default": false,
+					"description": "Disables --xmpfilter-style if there are no lines marked for annotation"
+				},
+				"seeing-is-believing.halt-run-on-error": {
+					"type": "boolean",
+					"default": true,
+					"description": "Set this to false if you would like to continue the run command in the event of an error. By default, any errors that seeing_is_believing experiences will cause the run command to terminate without changing anything."
+				}
+			}
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "yarn run compile",
+		"compile": "tsc -p ./",
+		"lint": "eslint src --ext ts",
+		"watch": "tsc -watch -p ./",
+		"pretest": "yarn run compile && yarn run lint",
+		"test": "node ./out/test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/chai": "^4.2.11",
+		"@types/glob": "^7.1.1",
+		"@types/mocha": "^7.0.1",
+		"@types/node": "^12.11.7",
+		"@types/sinon": "^7.5.2",
+		"@types/vscode": "^1.11.0",
+		"@typescript-eslint/eslint-plugin": "^2.18.0",
+		"@typescript-eslint/parser": "^2.18.0",
+		"chai": "^4.2.0",
+		"eslint": "^6.8.0",
+		"glob": "^7.1.6",
+		"mocha": "^7.0.1",
+		"sinon": "^9.0.1",
+		"typescript": "^3.7.5",
+		"vsce": "^1.74.0",
+		"vscode-test": "^1.3.0"
+	},
+	"__metadata": {
+		"id": "d3f68e28-5092-4dd6-a618-cb74912e218e",
+		"publisherId": "f982bb89-aa99-4758-a66c-3ecde7995d00",
+		"publisherDisplayName": "Brandon Conway"
+	}
+}
