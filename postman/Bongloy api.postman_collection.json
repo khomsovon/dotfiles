@@ -1,0 +1,453 @@
+{
+	"info": {
+		"_postman_id": "3759e276-be95-44fb-aa3f-0f2502f51115",
+		"name": "Bongloy api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Internal",
+			"item": [
+				{
+					"name": "Merchant",
+					"item": [
+						{
+							"name": "Index",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "Nh9p9Z?wfqEVHav9VijQzrPk",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "khom.sovon@yahoo.com",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/internal/merchants?filter[state]=approved&filter[approved_at]=2019-12-22&page[number]=1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"internal",
+										"merchants"
+									],
+									"query": [
+										{
+											"key": "filter[state]",
+											"value": "approved"
+										},
+										{
+											"key": "filter[approved_at]",
+											"value": "2019-12-22"
+										},
+										{
+											"key": "page[number]",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Depost",
+					"item": [
+						{
+							"name": "Index",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "Nh9p9Z?wfqEVHav9VijQzrPk",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "khom.sovon@yahoo.com",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/internal/deposits?filter[transaction_date]=2019-12-22&include=merchant",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"internal",
+										"deposits"
+									],
+									"query": [
+										{
+											"key": "filter[transaction_date]",
+											"value": "2019-12-22"
+										},
+										{
+											"key": "include",
+											"value": "merchant"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "BalanceTransaction",
+					"item": [
+						{
+							"name": "Index",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "Nh9p9Z?wfqEVHav9VijQzrPk",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "khom.sovon@yahoo.com",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/internal/merchant_settlements?filter[available_on]=2019-12-22&include=merchant",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"internal",
+										"merchant_settlements"
+									],
+									"query": [
+										{
+											"key": "filter[available_on]",
+											"value": "2019-12-22"
+										},
+										{
+											"key": "include",
+											"value": "merchant"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "V1",
+			"item": [
+				{
+					"name": "Token",
+					"item": [
+						{
+							"name": "Create Token",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "pk_test_I1xZJEVTwObN1oCYf2-559TCgBUYKcEzlqaNmWgBHcA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Bongloy-Account",
+										"value": "4d2f3a53-7d93-47e6-ba8f-03e1d8bcd05f",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"card\": {\n\t\t\"number\": \"6200000000000005\",\n\t\t\"exp_month\": 12,\n\t\t\"exp_year\": 2022,\n\t\t\"cvc\": \"123\"\n\t}\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/v1/tokens",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"v1",
+										"tokens"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "customer",
+					"item": [
+						{
+							"name": "Index",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "sk_test_tDUlFCgRIcLBx0oYK9xQHqNx7m0ganRGLY5B-G4ZvqM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:4000/api/v1/customers?limit=5&starting_after=b309f658-b53c-424b-866f-6f013c384e60",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"v1",
+										"customers"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "5"
+										},
+										{
+											"key": "starting_after",
+											"value": "b309f658-b53c-424b-866f-6f013c384e60"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "history",
+					"item": [
+						{
+							"name": "Index",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "sk_test_oZhsgk3En5v2NNgq1HGRj9kCWrStuTbkIotUw3yTikw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/v1/balance/history",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"v1",
+										"balance",
+										"history"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "charge",
+					"item": [
+						{
+							"name": "Create",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "sk_test_oZhsgk3En5v2NNgq1HGRj9kCWrStuTbkIotUw3yTikw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/x-www-form-urlencoded",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "amount",
+											"value": "2000",
+											"type": "text"
+										},
+										{
+											"key": "source",
+											"value": "91420195-d54d-421f-ba94-8265e633109f",
+											"type": "text"
+										},
+										{
+											"key": "currency",
+											"value": "usd",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:3000/v1/charges",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"v1",
+										"charges"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Retrieve",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "sk_test_8c3215891ebc18ae40a24f68a09b872646cf62c5b1d47c75232e7abd54b5e645",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://api.bongloy.com/v1/charges/473424c0-6a6a-4738-9e96-cf828120a63a",
+									"protocol": "https",
+									"host": [
+										"api",
+										"bongloy",
+										"com"
+									],
+									"path": [
+										"v1",
+										"charges",
+										"473424c0-6a6a-4738-9e96-cf828120a63a"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Capture",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": ""
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	]
+}
