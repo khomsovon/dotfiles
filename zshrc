@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/khomsovon/.oh-my-zsh
+export ZSH=/Users/sovonkhom/.oh-my-zsh
 export TERM=xterm-256color
 export PATH="$HOME/.composer/vendor/bin:$PATH"
 export ANDROID_HOME=$HOME/Library/Android/sdk
@@ -10,9 +10,9 @@ export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:$ANDROID_HOME/emulator
-export PATH=$PATH:`pwd`/flutter/bin
 export CURL_CA_BUNDLE=~/cacert.pem
 export GEM_HOME="$HOME/.gems"
+export CURL_CA_BUNDLE=/usr/local/etc/openss@1.1/cacert.pem
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -22,6 +22,7 @@ ZSH_DISABLE_COMPFIX=true
 
 # For compilers to find zlib you may need to set:
 export LDFLAGS="-L/usr/local/opt/zlib/lib"
+export CFLAGS="-I/usr/local/opt/openssl/include"
 export CPPFLAGS="-I/usr/local/opt/zlib/include"
 # export LDFLAGS="-L/usr/local/opt/openssl@1.1/lib"
 # export CPPFLAGS="-I/usr/local/opt/openssl@1.1/include"
@@ -76,6 +77,8 @@ export PKG_CONFIG_PATH="/usr/local/opt/zlib/lib/pkgconfig"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
+plugins=(zsh-autosuggestions)
+
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
@@ -102,8 +105,17 @@ export EDITOR='vim'
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 #
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+#export PATH="/Users/sovonkhom/.pyenv/bin:$PATH"
+#
+#
+#
+#
+#
+#
+#
+#
+# eval "$(pyenv init -)"
+# eval "$(pyenv virtualenv-init -)"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -154,10 +166,28 @@ alias cleandb="rails db:drop && rails db:create && rails db:migrate && rails db:
 #export PATH="/usr/local/opt/php@7.1/sbin:$PATH"
 #export PATH="/usr/local/etc/php/7.3/$PATH"
 #export PATH="/usr/local/etc/php/7.3/sbin:$PATH"
-export PATH="/Applications/MAMP/bin/php/php7.1.12/bin/$PATH"
-export PATH="/Applications/MAMP/bin/php/php7.1.12/sbin/$PATH"
+export PATH="/Applications/MAMP/bin/php/php7.4.2/bin/$PATH"
+export PATH="/Applications/MAMP/bin/php/php7.4.2/sbin/$PATH"
 export PATH="/Applications/MAMP/Library/bin/mysql/$PATH"
 export PATH="/usr/local/opt/ncurses/bin:$PATH"
-export PATH="/usr/local/opt/ruby/bin:$PATH"
+# export PATH="/usr/local/opt/ruby/bin:$PATH"
 export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
 export PATH="$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH"
+export PATH="/usr/local/opt/curl/bin:$PATH"
+export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
+export PATH="/usr/local/opt/ssh-copy-id/bin:$PATH"
+export PATH="/usr/local/opt/ssh-copy-id/bin:$PATH"
+export PATH="$PATH:/Users/sovonkhom/development/flutter/bin"
+export PATH="/usr/local/opt/krb5/bin:$PATH"
+export PATH="/usr/local/opt/krb5/sbin:$PATH"
+export PATH="/usr/local/opt/openjdk/bin:$PATH"
+# export PATH="/usr/local/opt/php@7.3/bin:$PATH"
+# export PATH="/usr/local/opt/php@7.3/sbin:$PATH"
+export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
+export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
+export PATH="/usr/local/opt/curl/bin:$PATH"
+export PATH="/usr/local/opt/php@7.3/bin:$PATH"
+export PATH="/usr/local/opt/php@7.3/sbin:$PATH"
+# export PATH="/usr/local/opt/ruby/bin:$PATH"
+export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
+export PATH="/usr/local/opt/python@3.9/bin:$PATH"
