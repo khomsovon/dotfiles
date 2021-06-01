@@ -1,0 +1,31 @@
+[color]
+	ui = true
+[user]
+	name = khomsovon
+	email = sovon.khom68@gmail.com
+[alias]
+  aa = add -A
+  st = status 
+  ci = commit
+  cm = commit -m
+  br = branch
+  co = checkout
+  df = diff
+  ds = diff --staged
+  dc = diff --cached
+  up = pull --rebase --prune
+  l = log --graph --decorate --pretty=oneline --abbrev-commit --date=relative --color -n 20
+  lg = log --graph --decorate --pretty=oneline --abbrev-commit --all --color
+  lga = log --all --graph --decorate --oneline --simplify-by-decoration
+  adog = log --all --decorate --oneline --graph
+  glog = log --oneline --graph
+  lol = log --graph --decorate --pretty=oneline --abbrev-commit --all
+  lgp = log -p
+  graph = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all --date=short
+  ls = ls-file
+  publish = "!git push -u origin \"$(git rev-parse --abbrev-ref HEAD)\""
+  unpublish = "!git push origin :\"$(git rev-parse --abbrev-ref HEAD)\""
+  s = status -s
+  amend = commit -a --amend
+[http]
+ sslVerify = true
